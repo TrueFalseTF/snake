@@ -14,7 +14,7 @@ namespace Snake
             int y1 = 3;
             char sym1 = '*'; //в одинарные кавычки заключается значение типа char, а в двойтые типа -string
 
-            Draw(x2, y2, sym2);
+            Draw(x1, y1, sym1);
 
             int x2 = 4;
             int y2 = 5;
