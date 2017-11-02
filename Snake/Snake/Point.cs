@@ -24,11 +24,42 @@ namespace Snake
             sym = _sym;
         }
 
+        public Point(Point p)
+        {
+            x = p.x;
+            y = p.y;
+            sym = p.sym;
+        }
+
+        public void Move(int offset, Direktion direktion)
+        {
+            if(direktion == Direktion.LEFT)
+            {
+                x = x - offset;
+            }
+            else if (direktion == Direktion.RIGHT)
+            {
+                x = x + offset;
+            }
+            else if (direktion == Direktion.TOP)
+            {
+                y = y + offset;
+            }
+            else if (direktion == Direktion.BOTTOM)
+            {
+                y = y - offset;
+            }                   
+        }
+        
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
         }
-        
+
+        public override string ToString()//меняет значение имени объекта
+        {
+            return x + "," + y + "," + sym;
+        }
     }
 }

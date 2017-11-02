@@ -25,8 +25,9 @@ namespace Snake
             vlineRight.Drow();
 
 
-            //Point p1 = new Point(1, 3, '*');
-            //p1.Draw();
+            Point p = new Point(1, 3, '*');
+            Snake snake = new Snake(p, 3, Direktion.RIGHT);
+            snake.Drow();
 
 
 
