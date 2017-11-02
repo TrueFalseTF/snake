@@ -57,6 +57,12 @@ namespace Snake
             Console.Write(sym);
         }
 
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
+
         public override string ToString()//меняет значение имени объекта
         {
             return x + "," + y + "," + sym;
