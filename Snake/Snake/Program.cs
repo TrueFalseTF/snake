@@ -26,28 +26,19 @@ namespace Snake
 
             //Отрисовка точек
             Point p = new Point(1, 3, '*');
-            Snake snake = new Snake(p, 10, Direktion.RIGHT);
-            snake.Drow();
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
+            Snake snake = new Snake(p, 4, Direktion.RIGHT);
 
+            while(true)
+            {
+                if(Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HendleKey(key.Key);
+                }
 
-            Console.ReadLine();
-        }
-
-        
+                Thread.Sleep(100);
+                snake.Move();
+            }            
+        }        
     }
 }

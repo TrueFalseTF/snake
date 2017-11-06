@@ -41,5 +41,26 @@ namespace Snake
             nextPoint.Move(1, direktion);
             return nextPoint;
         }
+
+        public void HendleKey (ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+            {
+                direktion = Direktion.LEFT; //Чтобы присвоить значение переменной внутри объекта, необходимо дать ссылку на этот объект.
+            }
+            else if (key == ConsoleKey.RightArrow)
+            {
+                direktion = Direktion.RIGHT;
+            }
+            else if (key == ConsoleKey.UpArrow)
+            {
+                direktion = Direktion.TOP;
+            }
+            else if (key == ConsoleKey.DownArrow)
+            {
+                direktion = Direktion.BOTTOM;
+            }
+
+        }            
     }
 }
