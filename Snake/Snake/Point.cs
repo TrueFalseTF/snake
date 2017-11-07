@@ -63,9 +63,16 @@ namespace Snake
             Draw();
         }
 
+        internal bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+
         public override string ToString()//меняет значение имени объекта
         {
             return x + "," + y + "," + sym;
         }
+
+        
     }
 }
