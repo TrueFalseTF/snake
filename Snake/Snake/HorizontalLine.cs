@@ -18,5 +18,19 @@ namespace Snake
                 pList.Add(p);
             }
         }
+
+        public override void Drow() //override ключевое слово подключающие для переопределения метод из базового класса
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            /*foreach (Point p in pList)
+            {
+                p.Draw();
+            }*/
+
+            base.Drow();
+
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }

@@ -11,48 +11,31 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Console.SetBufferSize(80, 25);
-            
-            //Отрисовка рамочки
-            HorizontalLine hlineTop = new HorizontalLine(0, 78, 0, '|');
-            HorizontalLine hLineBottom = new HorizontalLine(0, 78, 24, '|');
-            VerticalLine vLineLeft = new VerticalLine(0, 24, 0, '|');
-            VerticalLine vlineRight = new VerticalLine(0, 24, 78, '|');
-               
-            hlineTop.Drow();
-            hLineBottom.Drow();
-            vLineLeft.Drow();
-            vlineRight.Drow();
+            VerticalLine v1 = new VerticalLine(0, 10, 5, '%');
+            Draw(v1);//созданн метод принимающий объект класса Figure как аргумент
 
-            //Отрисовка точек
-            Point p = new Point(1, 3, '*');
-            Snake snake = new Snake(p, 4, Direktion.RIGHT);
-            snake.Drow();
+            Point p = new Point(3,4, '*');
+            Figure fSnake = new Snake(p, 4, Direktion.TOP);// инкапсулирован объект класса Figure
+            Draw(fSnake);
+            Snake snake = (Snake)fSnake;// Явное применение типов
 
-            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
-            Point food = foodCreator.CreateFood();
-            food.Draw();
+            HorizontalLine h1 = new HorizontalLine(0, 30, 5, '%');
 
-            while(true)
+            List<Figure> figure = new List<Figure>();
+            figure.Add(v1);
+            figure.Add(snake);
+            figure.Add(h1);
+
+            foreach (var f in figure)
             {
-                if(snake.Eat(food))
-                {
-                    food = foodCreator.CreateFood();
-                    food.Draw();
-                }
-                else
-                {
-                    snake.Move();
-                }
+                f.Drow();
+            }
 
-                Thread.Sleep(100);
-
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    snake.HendleKey(key.Key);
-                }               
-            }            
-        }        
+        }
+        
+        static void Draw( Figure figure)
+        {
+            figure.Drow();
+        }
     }
 }
