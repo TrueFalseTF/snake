@@ -16,7 +16,7 @@ namespace Snake
             //Отрисовка рамочки
             Walls walls = new Walls(80, 25);
             walls.Draw();
-
+            
             //Отрисовка точек
             Point p = new Point(1, 3, '*');
             Snake snake = new Snake(p, 4, Direktion.RIGHT);

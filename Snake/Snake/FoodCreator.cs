@@ -8,9 +8,9 @@ namespace Snake
 {
     class FoodCreator
     {
-        int mapWidht;
-        int mapHeight;
-        char sym;
+        private int mapWidht;
+        private int mapHeight;
+        private char sym;//Поля класса с локальной доступностью
 
         Random random = new Random();
 
